@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+<div class="add">
+<h4>Add New Student</h4>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Add User">
+</form>
+</div>
+<div >
+    <h4 class="show">Show data</h4>
+    <form method=""  action="{% url 'search' %}" >
+        <input type="text" name="q" placeholder="Search by Name" class="search_input">
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if userdata  %}
+        <table>
+            
+            <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Age</td>
+            <td>Action</td>
+            </tr>
+            {% for data in userdata %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.age}}</td>
+                <td>
+                </form> 
+                <button><a href="{% url 'updatedata' data.id %}">Edit</a></button>
+                
+                </td>
+                <td>
+                <form action="{% url 'deletedata' data.id %}" method="POST">
+                    {% csrf_token %}
+                <button>Delete</button>
+                </form>
+            </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h2><i>No Data Found</i></h2>
+    
+    {% endif %}
+</div>
+</div>
+{% endblock content %}

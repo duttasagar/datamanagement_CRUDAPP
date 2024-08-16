@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <style>
+            h2{
+                text-align: center;
+                background-color: whitesmoke;
+                padding: 8px;
+            }
+            h4{
+                background-color: thistle;
+                padding: 5px;
+                width: 400px;
+                text-align: center;
+            }
+            *{
+                margin: 5px;
+                padding: 5px;
+            }
+            .container{
+                display: flex;
+            }
+            
+            .add{
+                justify-content: space-around;
+            }
+            .show{
+                justify-content: space-around;
+                width: 525px;
+
+            }
+            table{
+                border:1px solid;
+                width:510px;
+                margin-left: 15px;
+                
+            }
+            a{
+                color:black
+            
+            }
+            tr{
+                border: 1px solid;
+            }
+            .update{
+                margin-left: 310px;
+            }
+            .edit{
+                margin-left: 120px
+            }
+            td{
+                text-align:center
+            }
+            button{
+                padding:1px
+            }
+            .search{
+                padding-left:240px
+            }
+            .btn{
+                padding:3px;
+                background-color:whitesmoke;
+                margin-left: 230px;
+            }
+            .search_input{
+                width:455px
+            }
+            .no_result{
+                margin-left: 430px;
+            }
+    .
+        </style>
+        
+    </head>
+    <body>
+        <div>
+            <h2>Data Management System</h2>
+            {% block content %}{% endblock content %}
+            
+        </div>
+        
+    </body>
+    </html>
